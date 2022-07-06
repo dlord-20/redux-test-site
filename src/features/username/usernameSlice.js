@@ -11,11 +11,18 @@ export const usernameSlice = createSlice({
     reducers: {
         changeName: (state, action) => {
             state.name = action.payload;
+        },
+        addCharacter: (state, action) => {
+            state.name += action.payload;
+        },
+        removeCharacter: (state, action) => {
+            const str = state.name.slice(0, action.payload) + state.name.slice(action.payload + 1);
+            state.name = str;
         }
     }
 })
 
-export const { changeName } = usernameSlice.actions;
+export const { changeName, addCharacter, removeCharacter } = usernameSlice.actions;
 
 export const selectUsername = (state) => state.username.name;
 

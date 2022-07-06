@@ -1,0 +1,16 @@
+.test {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.buttonA {
+    border: 1px #ffc0cb solid;
+    cursor: pointer;
+    padding: 1rem 2rem;
+}
+
+.buttonA:hover {
+    background-color: #b1626f79;
+}
