@@ -10,17 +10,25 @@ export function UserName() {
     const dispatch = useDispatch();
     // const [funnyName, setFunnyName] = useState(username);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            const randNum = getRandomNumber(username.length - 1);
+    const randomCharacterChange = () => {
+        const randNum = getRandomNumber(username.length - 1);
             const randLetter = getRandomLetter();
             console.log(username);
             dispatch(changeName(changeCharacter(username, randNum, randLetter)));
             // console.log(username);
-        }, 3000)
+    }
 
-        return () => { clearInterval(interval)};
-    }, [])
+    // useEffect(() => {
+    //     var interval = setInterval(() => {
+    //         const randNum = getRandomNumber(username.length - 1);
+    //         const randLetter = getRandomLetter();
+    //         console.log(username);
+    //         dispatch(changeName(changeCharacter(username, randNum, randLetter)));
+    //         // console.log(username);
+    //     }, 3000)
+
+    //     return () => { clearInterval(interval)};
+    // }, [])
 
     const handleChange = (e) => {
         // console.log('hi');
@@ -46,6 +54,7 @@ export function UserName() {
         <div>
             <h3>{username}</h3>
             <input type='textbox' onChange={handleChange}/>
+            <input type='checkbox' onClick={randomCharacterChange} />
             <p>hi</p>
         </div>
     )

@@ -17,6 +17,10 @@ export function Counter() {
 
   const incrementValue = Number(incrementAmount) || 0;
 
+  const logCount = () => {
+    console.log(count);
+  }
+
   return (
     <div>
       <div className={styles.row}>
@@ -31,7 +35,7 @@ export function Counter() {
         <button
           className={styles.button}
           aria-label="Increment value"
-          onClick={() => dispatch(increment())}
+          onClick={() => {dispatch(increment()); logCount();}}
         >
           +
         </button>
