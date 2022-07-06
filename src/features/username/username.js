@@ -65,7 +65,26 @@ export function UserName() {
     }
 
     const rickRoll = () => {
+        const message = 'Never gonna give you up. Never gonna let you down. Never gonna run around and desert you.';
+        if(username.length != message.length) {
+            if(username.length > message.length) {
+                //If current string is too long we want to shorter it
+                removeOldCharacter();
+            } else {
+                //If current string is too short we want to make it longer
+                addNewCharacter();
+            }
+        }
 
+        //The following logic is not great. Think of another way to implement change
+        const tempName = username;
+        var index = 0;
+        do {
+            index = getRandomNumber(username.length);
+            tempName = changeCharacter(tempName, index, message[index]);
+            
+        } while (tempName[index] != message[index]);
+        dispatch(changeName(tempName));
     }
 
     return (
@@ -78,7 +97,7 @@ export function UserName() {
                 <p className="buttonA" onClick={addNewCharacter}>Add Random Character</p>
                 <p className="buttonA" onClick={removeOldCharacter}>Remove Random Character</p>
             </div>
-            <p className="buttonA" onClick={rickRoll} >Hidden Message</p>
+            <p className="buttonA" onClick={rickRoll} >Slowly Reveal Hidden Message</p>
         </div>
     )
 }
