@@ -1,8 +1,19 @@
+.username {
+    max-width: 90%;
+    margin: 2rem;
+}
+
+/* figure out how to wrap words even if they shouldn't be able to wrap */
+.username h3 {
+    max-width: 200px;
+}
+
 .test {
     display: flex;
     gap: 2rem;
     justify-content: center;
     align-items: baseline;
+    max-width: 100%;
 }
 
 .buttonA {

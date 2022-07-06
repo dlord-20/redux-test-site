@@ -88,7 +88,7 @@ export function UserName() {
     }
 
     return (
-        <div>
+        <div className='username'>
             <h3>{username}</h3>
             <label>Change input </label>
             <input type='textbox' onChange={handleChange}/>
